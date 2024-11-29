@@ -25,7 +25,7 @@ jobs:
           node-version: 21.x
 
       # Install dependencies
-      - name: 🧰 Install Deps
+      - name: 🧰 Install Dependencies
         run: npm install
         
 
