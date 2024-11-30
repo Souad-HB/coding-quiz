@@ -3,7 +3,7 @@ name: deploy workflow
 on:
   push:
     branches: [main]
-  pull_requests:
+  pull_request:
     branches: 
       - main
 
@@ -19,8 +19,8 @@ jobs:
           npm run test
 
       - name: DeployToRender
-          if: github.ref == 'refs/heads/main'
-          env: 
-            DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
-            run: | 
-            curl "DEPLOY_URL"
+        if: github.ref == 'refs/heads/main'
+        env: 
+          DEPLOY_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: | 
+          curl "DEPLOY_URL"
